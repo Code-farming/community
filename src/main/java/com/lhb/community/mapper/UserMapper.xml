@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.community.mapper.UserMapper">
+
+    <insert id="insert" parameterType="com.lhb.community.model.User">
+        insert into user (name,account_id,token,gmt_create,gmt_modified,bio,avatar_url) values (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified},#{bio},#{avatarUrl})
+    </insert>
+
+    <select id="findByToken" resultType="com.lhb.community.model.User" parameterType="string">
+        select * from user where token=#{token}
+    </select>
+    <select id="findById" resultType="com.lhb.community.model.User">
+        select * from user where account_id=#{creator}
+    </select>
+
+
+</mapper>
