@@ -10,7 +10,7 @@
         select * from user where token=#{token}
     </select>
     <select id="findById" resultType="com.lhb.community.model.User">
-        select * from user where account_id=#{creator}
+        select * from user where account_id=#{accountId}
     </select>
 
 

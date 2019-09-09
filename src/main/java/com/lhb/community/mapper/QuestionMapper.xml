@@ -15,4 +15,11 @@
     <select id="count" resultType="java.lang.Integer">
         select count(1) from question
     </select>
+
+    <select id="countByID" resultType="java.lang.Integer">
+        select count(1) from question where creator=#{accountId}
+    </select>
+    <select id="listQuestionByID" resultType="com.lhb.community.model.Question">
+         select * from question where creator=#{accountId} limit #{offset},#{size}
+    </select>
 </mapper>

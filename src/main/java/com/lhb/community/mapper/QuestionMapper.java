@@ -13,4 +13,7 @@ public interface QuestionMapper {
 
     Integer count();
 
+    Integer countByID(@Param("accountId") Integer accountId);
+
+    List<Question> listQuestionByID(@Param("offset") Integer offset, @Param("size") Integer size, @Param("accountId") Integer accountId);
 }
