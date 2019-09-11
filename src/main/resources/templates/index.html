@@ -24,12 +24,13 @@
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading" th:text="${questionDTO.title}"></h4>
+                    <h4 class="media-heading"><a th:text="${questionDTO.title}" th:href="@{'question/'+${questionDTO.id}}"></a></h4>
                     <span th:text="${questionDTO.description}"></span>
                     <span class="text-desc">
                         •<span th:text="${questionDTO.commentCount}"></span>个评论
                         •<span th:text="${questionDTO.viewCount}"></span>次浏览
-                        •<span th:text="${#dates.format(questionDTO.gmtCreate,'yyyy-MM-dd')}"></span> </span>
+                        •<span th:text="${#dates.format(questionDTO.gmtCreate,'yyyy-MM-dd')}"></span>
+                    </span>
                 </div>
             </div>
             <nav aria-label="Page navigation">

@@ -15,5 +15,18 @@ body {
 .text-desc {
     font-size: 12px;
     font-weight: normal;
+
+}
+
+.community-menu {
     color: #999;
+}
+
+.community-menu-hr{
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+
+.community-h5{
+    margin-top: 12px;
 }

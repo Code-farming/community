@@ -7,6 +7,9 @@
         insert into question (title, description, gmt_create,gmt_modified, creator, comment_count, view_count, like_count, tag)
          values (#{title},#{description},#{gmtCreate},#{gmtModified},#{creator},#{commentCount},#{viewCount},#{likeCount},#{tag})
     </insert>
+    <update id="update">
+        update question set title=#{title},description=#{description},gmt_modified=#{gmtModified},tag=#{tag} where id=#{id}
+    </update>
 
     <select id="list" resultType="com.lhb.community.model.Question">
         select * from question limit #{offset},#{size}
@@ -21,5 +24,9 @@
     </select>
     <select id="listQuestionByID" resultType="com.lhb.community.model.Question">
          select * from question where creator=#{accountId} limit #{offset},#{size}
+    </select>
+
+    <select id="findById" resultType="com.lhb.community.model.Question">
+        select * from question where id=#{id}
     </select>
 </mapper>
